@@ -1,0 +1,9 @@
+.agreement {
+    background-color: lightgreen;
+    padding: 20px;
+}
+
+.agreement h1,
+.agreement p{
+    margin: 20px 0;
+}

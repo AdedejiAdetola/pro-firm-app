@@ -1,0 +1,36 @@
+.signin {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 20px;
+    /* border: 2px solid black; */
+}
+
+.signin h2{
+    margin-bottom: 60px;
+    font-size: 60px;
+}
+
+.signin a {
+    text-decoration: none;
+    color: #E25E3E;
+}
+
+.signin a:hover{
+    color: blue;
+}
+
+.signin form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.signin .stack{
+    width: 100%;
+    margin-bottom: 20px;
+}

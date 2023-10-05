@@ -1,0 +1,22 @@
+div{
+    padding: 0 20px;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h3{
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+p{
+    text-align: justify;
+    margin-bottom: 20px;
+    line-height: 2rem;
+}
+
+ol{
+    margin-bottom: 20px;
+}

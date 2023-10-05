@@ -1,0 +1,22 @@
+.one-purchased{
+    background-color: lightgreen;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+
+.one-purchased p{
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+}
+
+.one-purchased .button {
+    display: flex;
+    justify-content: center;
+}
+
+.custom-link:hover {
+    color: white; /* Change to your desired hover color */
+}

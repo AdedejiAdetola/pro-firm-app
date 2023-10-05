@@ -1,0 +1,10 @@
+.navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 0;
+}
+
+.navigation .hover-thing:hover{
+    color: blue;
+}
