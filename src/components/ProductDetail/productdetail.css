@@ -1,5 +1,6 @@
-div{
-    padding: 0 10px;
+.detailContainer{
+    padding: 20px;
+    width: 80%;
 }
 h2 {
     text-align: center;

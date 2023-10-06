@@ -3,6 +3,11 @@
     display: flex;
     justify-content: space-evenly;
     padding: 5px 0;
+    flex-wrap: wrap;
+}
+
+.surround{
+    margin: 10px 0;
 }
 
 .navigation .hover-thing:hover{

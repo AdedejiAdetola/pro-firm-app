@@ -63,12 +63,12 @@ const Dashboard = () => {
     <div className='dashboard'>
       <Navigation />
 
-      <video controls width="600" height="400">
+      <video controls width="600">
         <source src={video} controls loop type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
-      <h2> Your referral code is {refCode}</h2>
+      <p className='refer'> Your referral code is {refCode}</p>
       <div className='product'>
         <h1>Products</h1>
 

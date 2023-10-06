@@ -3,6 +3,7 @@ import * as api from '../../api';
 import { useNavigate } from 'react-router-dom';
 import OnePurchasedProduct from './OnePurchasedProduct/OnePurchasedProduct';
 import Navigation from '../Navigation/Navigation';
+import './purchasedproducts.css'
 
 const PurchasedProducts = () => {
   const [purchasedProducts, setPurchasedProducts] = useState([]);
@@ -78,48 +79,52 @@ const PurchasedProducts = () => {
     <div>
       <Navigation />
 
-      <h2>Purchased Products</h2>
+      <div className='purchasedProducts'>
+        <h2>Purchased Products</h2>
 
-      <h3>Accumulated Commission: {profit}</h3>
-      <ul>
-        {purchasedProducts.data?.map((product) => {
-          const accumulatedIncome = calculateAccumulatedIncome(product);
-          const daysRemaining = Math.max(0, product.productCycle - accumulatedIncome / product.productDailyIncome);
+        <h3>Accumulated Commission: {profit}</h3>
+        <ul>
+          {purchasedProducts.data?.map((product) => {
+            const accumulatedIncome = calculateAccumulatedIncome(product);
+            const daysRemaining = Math.max(0, product.productCycle - accumulatedIncome / product.productDailyIncome);
 
-          const purchasedProduct = getPurchasedProducts.purchasedDetails?.find(
-            (purchasedProduct) => purchasedProduct._id === product._id
-          );
-      
-          const purchaseDate = purchasedProduct ? new Date(purchasedProduct.date) : new Date()
-          const year = purchaseDate.getFullYear();
-          const month = purchaseDate.getMonth() + 1; // Months are zero-based, so we add 1
-          const day = purchaseDate.getDate();
-          const hours = purchaseDate.getHours();
-          const minutes = purchaseDate.getMinutes();
-          const seconds = purchaseDate.getSeconds();
-      
-          // Create a formatted date string
-          const formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
-          const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-      
-          // console.log(`Formatted Date: ${formattedDate}`);
-          // console.log(`Formatted Time: ${formattedTime}`);
-          const getDate = `${formattedDate} ${formattedTime}`
+            const purchasedProduct = getPurchasedProducts.purchasedDetails?.find(
+              (purchasedProduct) => purchasedProduct._id === product._id
+            );
 
-          return (
-            
-            <li key={product.productId}>
-              <OnePurchasedProduct
-                purchasedProduct={product}
-                accumulatedIncome={accumulatedIncome}
-                daysRemaining={daysRemaining}
-                onWithdraw={handleWithdraw}
-                date = {getDate}
-              />
-            </li>
-          );
-        })}
-      </ul>
+            const purchaseDate = purchasedProduct ? new Date(purchasedProduct.date) : new Date()
+            const year = purchaseDate.getFullYear();
+            const month = purchaseDate.getMonth() + 1; // Months are zero-based, so we add 1
+            const day = purchaseDate.getDate();
+            const hours = purchaseDate.getHours();
+            const minutes = purchaseDate.getMinutes();
+            const seconds = purchaseDate.getSeconds();
+
+            // Create a formatted date string
+            const formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+            const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            // console.log(`Formatted Date: ${formattedDate}`);
+            // console.log(`Formatted Time: ${formattedTime}`);
+            const getDate = `${formattedDate} ${formattedTime}`
+
+            return (
+              
+              <li key={product.productId}>
+                <OnePurchasedProduct
+                  purchasedProduct={product}
+                  accumulatedIncome={accumulatedIncome}
+                  daysRemaining={daysRemaining}
+                  onWithdraw={handleWithdraw}
+                  date = {getDate}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      
     </div>
   );
 };
